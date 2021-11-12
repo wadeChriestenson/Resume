@@ -13,7 +13,8 @@ Vue.component('info', {
             email: 'wade@wadeprojects.io',
             githubImage: './assets/img/github.png',
             linkedinImage: './assets/img/linkedin.png',
-            emailImage: './assets/img/email.png'
+            emailImage: './assets/img/email.png',
+            phoneImage: './assets/img/phone.png'
         }
     },
 
@@ -22,22 +23,26 @@ Vue.component('info', {
     <h1>{{ firstName + ' ' + lastName }}</h1>
     <p>{{' ' + street1 + ' ' + street2 + ' ' + city + ' ' + state + ' ' + zip }}</p>
     <p>{{ 'Phone:' + ' ' + phoneNumber }}</p>
-<!--    <p class="emailT">{{ 'Email: '}}<a class="emailA" href="mailto:{{ email }}">{{ email }}</p>-->
+    <p class="emailT">{{ email }}</p>
     <div class="image">
-    <a href="mailto:{{ email }}"><img v-bind:src="image1"></a>
-    <a href="https://github.com/wadeChriestenson" target="_blank"><img v-bind:src="image2"></a>
-    <a href="https://www.linkedin.com/in/wadechriestenson/" target="_blank"><img v-bind:src="image3"></a>
+    <a href="tel:{{ phoneNumber }}"><img v-bind:src="image1"></a>
+    <a href="mailto:{{ email }}"><img v-bind:src="image2"></a>
+    <a href="https://github.com/wadeChriestenson" target="_blank"><img v-bind:src="image3"></a>
+    <a href="https://www.linkedin.com/in/wadechriestenson/" target="_blank"><img v-bind:src="image4"></a>
     </div>
     </div>
     `,
     computed:{
         image1(){
-          return this.emailImage
+          return this.phoneImage
         },
         image2(){
+          return this.emailImage
+        },
+        image3(){
             return this.githubImage
         },
-        image3() {
+        image4() {
             return this.linkedinImage
         }
     }
@@ -107,12 +112,10 @@ Vue.component('work', {
             ],
             work4:[
                  '- May 2013 to July 2018',
-                'Fabrication experience- Roller, Folding Table, Trump Laser, ATC Amada Brake Press, and Amada Brake Press. Creation of Standards, Safety, and Preventive Maintenance in all of Fabrication per value stream.',
-                'Weld Experience- Tack Jig Welder, Robot Welder, and grinder. Checking quality of welds to prints. Creation of standards, safety, and preventive maintenance in weld cells per value stream.',
+                'Fabrication experience- Roller, Folding Table, Trump Laser, ATC Amada Brake Press, and Amada Brake Press. Creation of Standards, Safety, and Preventive Maintenance in Fabrication.',
+                'Weld Experience- Tack Jig Welder, Robot Welder, and grinder. Checking quality of welds to prints. Creation of standards, safety, and preventive maintenance in weld cells.',
                 'Assembly- Follow prints to build specific units. Read and follow standards. Adhere to all safety rules and regulations.',
                 'Lead- Delegating task to floor employees. Communication with all departments to create units per schedule. Safety and Quality Audits in cells per value stream.',
-                'Supervisor- Delegate all tasks for shift to floor leads. Create and implement leader standard work. Create cross training systems to help reduce quality defects. Take accountability for all quality, safety, and deliver output per value stream.',
-                'Powder coat associate- Time management of paint cycles per value stream, organization of hooks and hangers for paint parts. Create standards for hang and rotation of hooks.',
             ],
             tabs: [
                 'Vision Plastics',
